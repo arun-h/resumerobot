@@ -560,67 +560,42 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="hero">
+<section class="hero">
     <div class="container">
       <div class="hero-content">
-        <h1>Beat the AI Gatekeepers. Get More Interviews.</h1>
+        <h1>Beat the AI Gatekeepers Get More Interviews.</h1>
         <p>AI-optimized resumes 3x more likely to pass ATS scanners</p>
-        <a href="#" class="cta-button">Get Your Resume Noticed — Free</a>
+        <!-- 💡 Fixed CTA text -->
+        <a href="#" class="cta-button">Start Free ATS Analysis →</a>
+        
+        <!-- 💡 Moved trust badges inside container -->
         <div class="urgency-badge">
-  🚀 <span id="resumeCount">68</span> resumes optimized today! 
-  <span style="color:var(--accent);">50% off Premium →</span>
-</div>
+          🚀 <span id="resumeCount">38</span> resumes optimized today! 
+          <span style="color:var(--accent);">50% off Premium →</span>
+        </div>
 
-<!-- Trust Badges -->
-<div class="trust-badges">
-  <img src="https://i.imgur.com/3Q6u3Jq.png" alt="As seen in TechCrunch" style="height:30px;">
-  <img src="https://i.imgur.com/5WZw2dS.png" alt="Featured on Product Hunt" style="height:30px;">
-</div>
-
-<style>
-  .trust-badges {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    margin-top: 1rem;
-    opacity: 0.8;
-  }
-</style>
-
-<script>
-  // Animated counter
-  let count = 38;
-  setInterval(() => {
-    count += Math.floor(Math.random() * 3);
-    document.getElementById('resumeCount').textContent = count;
-  }, 90000);
-</script>
+        <div class="trust-badges">
+          <img src="https://i.imgur.com/3Q6u3Jq.png" alt="As seen in TechCrunch">
+          <img src="https://i.imgur.com/5WZw2dS.png" alt="Featured on Product Hunt">
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Video Demo Section -->
-  <section class="video-demo">
+   <section class="video-demo">
     <div class="container">
       <h2 class="section-title">See ResumeRobot in Action</h2>
+      <!-- 💡 Fixed video embed + removed duplicate elements -->
       <div class="video-container">
-        <div class="video-container">
-  <iframe 
-    width="100%" 
-    height="450" 
-    src="https://www.youtube.com/embed/5t6yv7D?si=JqW3ZkXrTmGvLQZR&amp;controls=0&autoplay=1&mute=1&loop=1" 
-    title="Demo video" 
-    frameborder="0" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-    allowfullscreen
-    style="border-radius:12px;">
-  </iframe>
-</div>
-          <div class="play-button">
-            <div class="play-icon"></div>
-          </div>
-          <p>Watch how ResumeRobot transforms your resume in 2 minutes</p>
-        </div>
+        <iframe 
+          width="100%" 
+          height="450" 
+          src="https://www.youtube.com/embed/5t6yv7D?si=JqW3ZkXrTmGvLQZR&amp;controls=0&autoplay=1&mute=1&loop=1" 
+          title="Demo video" 
+          frameborder="0" 
+          allowfullscreen>
+        </iframe>
       </div>
     </div>
   </section>
@@ -772,22 +747,83 @@
     </div>
   </footer>
 
-  <!-- Email Capture Modal -->
-<div id="emailModal" style="display:none; position:fixed; bottom:20px; right:20px; background:white; padding:2rem; border-radius:12px; box-shadow:0 10px 15px rgba(0,0,0,0.1); z-index:1000; width:300px;">
-  <h3 style="margin-bottom:1rem;">🚀 Get Your Free ATS Scan</h3>
-  <form action="https://api.convertkit.com/v3/forms/YOUR_FORM_ID/subscribe" method="post">
-    <input type="email" name="email" placeholder="Your best email" required style="width:100%; padding:0.8rem; margin-bottom:1rem; border:1px solid #ddd; border-radius:8px;">
-    <button type="submit" style="background:var(--primary); color:white; border:none; padding:0.8rem 1.5rem; border-radius:8px; width:100%; cursor:pointer;">Scan My Resume Now →</button>
-  </form>
-  <p style="font-size:0.8rem; margin-top:1rem;">We hate spam too. Unsubscribe anytime.</p>
-</div>
+ <!-- Email Capture Modal -->
+  <div id="emailModal">
+    <!-- 💡 Moved styles to CSS section -->
+    <h3>🚀 Get Your Free ATS Scan</h3>
+    <form action="https://api.convertkit.com/v3/forms/YOUR_FORM_ID/subscribe" method="post">
+      <input type="email" name="email" placeholder="Your best email" required>
+      <button type="submit">Scan My Resume Now →</button>
+    </form>
+    <p>We hate spam too. Unsubscribe anytime.</p>
+  </div>
 
-<script>
-  
-  setTimeout(() => {
-    document.getElementById('emailModal').style.display = 'block';
-  }, 5000);
-</script>
+
+  <script>
+   
+    let count = 38;
+    setInterval(() => {
+      count += Math.floor(Math.random() * 3);
+      document.getElementById('resumeCount').textContent = count;
+    }, 90000);
+
+    // Show modal after 5 seconds
+    setTimeout(() => {
+      document.getElementById('emailModal').style.display = 'block';
+    }, 5000);
+  </script>
+
+  <style>
+    
+    #emailModal {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+      z-index: 1000;
+      width: 300px;
+    }
+    
+    #emailModal input {
+      width: 100%;
+      padding: 0.8rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+    
+    #emailModal button {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 8px;
+      width: 100%;
+      cursor: pointer;
+    }
+
+ 
+    .trust-badges {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 1rem;
+      opacity: 0.8;
+    }
+    
+    .trust-badges img {
+      height: 30px;
+      transition: transform 0.3s ease;
+    }
+    
+    .trust-badges img:hover {
+      transform: scale(1.05);
+    }
+  </style>
 
   <!--  SEO Keywords -->
 <div style="display:none;">
